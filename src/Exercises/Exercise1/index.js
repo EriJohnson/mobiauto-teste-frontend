@@ -17,7 +17,14 @@
 
 // "Nanananananananananana Batman!" --> "##########################man!"
 function maskify(string) {
-  //you code here...
+  if (string.length < 4) {
+    return string;
+  }
+
+  const mask = '#'.repeat(string.length - 4);
+  const lastFourCharacters = string.substr(-4);
+
+  return `${mask}${lastFourCharacters}`;
 }
 
 module.exports = maskify;
